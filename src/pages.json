@@ -1,0 +1,31 @@
+{
+	"pages": [
+		{
+			"path": "pages/entry/index"
+		},
+    {
+      "path": "pages/activity-status/index"
+    },
+    {
+      "path": "pages/web-view/index"
+    }
+	],
+	"globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#ffffff",
+    "titleNView": false,
+    "mp-alipay": {
+      "allowsBounceVertical": "NO",
+      "transparentTitle": "none",
+      "titlePenetrate": "YES"
+    }
+  },
+	"easycom": {
+    "autoscan": true,
+    "custom": {
+      "^dialog-(.*)": "@/dialogs/$1.vue"
+    }
+  }
+}
