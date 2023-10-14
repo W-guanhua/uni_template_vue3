@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { useActivityStore } from './useActivityStore'
-
+import { getWeather } from '@/apis/example'
+import { ref } from 'vue'
 const { updateActivityStatus, checkActivityStatus } = useActivityStore()
 
 export const useUserStore = defineStore('userStore', () => {
@@ -13,7 +14,17 @@ export const useUserStore = defineStore('userStore', () => {
         checkActivityStatus()
     }
 
+    // example code
+    const weatherCondition = ref('')
+
+    const fetchExampleIndex = async () => {
+        const { result } = await getWeather()
+        weatherCondition.value = result?.condition?.condition
+    }
+
     return {
+        weatherCondition,
+        fetchExampleIndex,
         fetchUserIndex
     }
 })
